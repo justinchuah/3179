@@ -15,7 +15,7 @@
     {
       "data": {
         
-        "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/data/AQI and Lat Long of Countries.csv"
+        "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/data/AQI_and_Lat_Long_of_Countries.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
