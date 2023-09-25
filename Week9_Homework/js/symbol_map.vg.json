@@ -7,34 +7,51 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/js/ne_110m.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+        "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/js/ne_110m_ocean.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
       },
-      "mark": {"type": "geoshape", "fill": "gray", "stroke": "lightgray"}
+      "mark": {"type": "geoshape", "fill": "skyblue"}
     },
     {
       "data": {
-        
+        "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/js/ne_110m.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    },
+    
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/js/ne_110m.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "gray", "stroke": "darkgray"}
+    },
+    
+    
+    
+    {
+      "data": {
         "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/data/AQI_and_Lat_Long_of_Countries.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
-        "longitude": {"field": "lat", "type": "quantitative"},
-        "latitude": {"field": "lng", "type": "quantitative"},
+        "longitude": {"field": "lng", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
         "size": {
           "field": "AQI Value",
           "type": "quantitative",
           "title": "AQI Value",
-          "scale": {"domain": [0, 500], "range": [0,500]}
+          "scale": {"domain": [0, 500], "range": [0, 500]}
         },
         "color": {
           "field": "AQI Value",
           "type": "quantitative",
           "title": "AQI Value",
           "scale": {
-            "scheme": "reds",
+            "scheme": "bluegreen",
             "type": "threshold",
-            "domain": [ 10, 50, 200, 500]
+            "domain": [10,40, 50, 200, 500]
           }
         }
       }
