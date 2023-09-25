@@ -30,7 +30,7 @@
         "color": {
           "field": "AQI Value",
           "type": "quantitative",
-          "title": "AQI Value,
+          "title": "AQI Value",
           "scale": {"scheme": "reds"}
         }
       }
