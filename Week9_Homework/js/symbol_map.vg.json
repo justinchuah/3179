@@ -31,7 +31,11 @@
           "field": "AQI Value",
           "type": "quantitative",
           "title": "AQI Value",
-          "scale": {"scheme": "reds"}
+          "scale": {
+            "scheme": "reds",
+            "type": "threshold",
+            "domain": [ 10, 50, 200, 500]
+          }
         }
       }
     }
