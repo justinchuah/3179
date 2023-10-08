@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Week9_Homework/data/AQI_and_Lat_Long_of_Countries.csv"
+  },
+  "title": {
+    "text": "AQI Category for Countries",
+    "fontSize": 25
+  },
+  "width": 800,
+  "transform": [{"filter": "datum.Country != ''"},
+    {"groupby": ["Country", "AQI Category"],
+    "aggregate": [{"op": "count", "as": "count"}]}
+  ],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "aqi_category_highlight",
+          "select": {"type": "point", "fields": ["AQI Category"]},
+          "bind": "legend"
+        }
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "aggregate": "sum",
+          "field": "count",
+          "type": "quantitative",
+          "axis": {"title": "AQI Category of Cities in a Country "}
+        },
+        "y": {"field": "Country", "axis": {"title": "Country"}, "sort": "-x"},
+        "color": {
+          "field": "AQI Category",
+          "type": "nominal",
+          "title": "AQI Category",
+          "legend": {
+            "titleFontSize": 13,
+            "direction": "vertical",
+            "orient": "right",
+            "labelFontSize": 10
+          }
+        },
+        "opacity": {
+          "condition": {"param": "aqi_category_highlight", "value": 1},
+          "value": 0.1
+        },
+        "tooltip": [
+          {"field": "Country", "title": "Country"},
+          {"field": "AQI Category", "title": "AQI Category"},
+          {"field": "count", "title": "Number of Cities"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "color": "darkgrey", "dx": 10, "dy": 5},
+      "encoding": {
+        "x": {
+          "aggregate": "sum",
+          "field": "count",
+          "type": "quantitative",
+          "bandPosition": 0.5
+        },
+        "y": {"field": "Country", "type": "nominal", "sort": "-x"},
+        "text": {"aggregate": "sum", "field": "count", "type": "quantitative"},
+        "fillOpacity": {
+          "condition": {"param": "aqi_category_highlight", "value": 1},
+          "value": 0
+        }
+      }
+    }
+  ]
+}
