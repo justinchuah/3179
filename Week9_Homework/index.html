@@ -16,22 +16,21 @@
 <body>
 
     <div id="symbol_map"></div>
-
+    <div id="stacked_bar"></div>
     <script type="text/javascript">
 
         var spec2 = "js/symbol_map.vg.json";
         vegaEmbed('#symbol_map', spec2).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
-    </script>
-    <div id="symbol_map"></div>
-
-    <script type="text/javascript">
-
         var spec3 = "js/stacked_bar.vg.json";
-        vegaEmbed('#symbol_map', spec3).then(function (result) {
+        vegaEmbed('#stacked_bar', spec3).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
+    </script>
+
+
+        
     </script>
 
 </body>
