@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Cities in the World with the Highest NO2 AQI Value",
+  "data": {
+    "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_and_Lat_Long_of_Countries.csv"
+  },
+  "params": [{
+        "name": "numCities",
+        "value": 5,
+        "bind": {
+            "input": "range",
+            "min": 2,
+            "max": 10,
+            "step": 1,
+            "name": "Number of cities: "
+        }
+    }]
+  ,
+  "transform": [
+    {
+      "window": [{
+        "field": "NO2 AQI Value",
+        "op":"rank",
+        "as":"rank"
+      }],
+      "sort": [{"field":"NO2 AQI Value","order":"descending"}]
+    },
+    {
+      "filter":"datum.rank <=numCities"
+    }
+  ],
+  "layer": [{
+    "mark": {"type": "bar", "size":10},
+    "encoding": {
+      "y":{
+        "field":"City",
+        "type": "ordinal",
+        "title": "City Name",
+        "sort":"-x"
+      },
+      "x":{
+        "field":"NO2 AQI Value",
+        "aggregate":"max",
+        "title": "NO2 AQI Value"
+      },
+      "color":{
+        "field":"Country"
+      },
+      "tooltip":[{"field":"City"}, {"field":"NO2 AQI Value"}]
+        
+    }
+  },
+  {"mark":{"type": "text", "dx":17, "dy":0, "color":"black", "size":13},
+  "encoding": {
+    "x":{
+      "field":"NO2 AQI Value",
+      "aggregate":"max",
+      "type": "quantitative",
+      "bandPosition": 0.5
+    },
+    "y":{
+      "field":"City",
+      "type": "ordinal",
+      "sort":"-x"
+
+    },
+    "text":{"aggregate": "max", "field":"NO2 AQI Value"}
+  }}
+  ,
+  {
+    "mark": {"type": "point","size":250,"filled":true} ,
+    "encoding": {
+      "y":{
+        "field":"City", "sort":"-x"
+      },
+      "x":{
+        "aggregate":"max",
+        "field":"NO2 AQI Value"
+      },
+      "color":{
+        "field":"Country"
+      },
+      "tooltip":[{"field":"City"}, {"field":"NO2 AQI Value"}]
+    }
+  }]
+}
+
+
