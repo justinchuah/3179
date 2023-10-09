@@ -23,7 +23,7 @@
         "op":"rank",
         "as":"rank"
       }],
-      "sort": [{"field":"CO AQI Value","order":"descending"}],
+      "sort": [{"field":"CO AQI Value","order":"descending"}]
     },
     {
       "filter":"datum.rank <=numCities"
