@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_of_Countries.csv"},
-  "title":"Relationship between CO AQI vs NO2 AQI", 
   "transform": [{
     "filter": {"and": [
       {"field": "CO AQI Value", "range":[0,60]},
@@ -21,8 +20,9 @@
   ]
   ,
   "mark": "point",
-  "width": 700,
-  "height": 800,
+  "width": 800,
+  "height": 700,
+  "background":"beige",
   "encoding": {
     "x": {
       "field": "CO AQI Value",

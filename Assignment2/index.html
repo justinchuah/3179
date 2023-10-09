@@ -25,12 +25,45 @@
         
         <div class="spacepad"></div>
         <h2 class ="normaltitle">The Current Global Air Quality Index(AQI)</h2>
-        <div class="choropleth">
+        <div class="idioms">
             <div id ="choropleth" ></div>
         </div>
-        <div id= "scatter"></div>
-        <div id= "lollipop"></div>
-        <div id= "heatmap"></div>
+        <p class="intro">
+            It can be seen that more than half of the countries displayed are displaying an AQI value of >100, which has been deemed to be unhealthy levels for 
+            people that have health issues, specifically the individuals with respiratory related issues. There are also certain countries that has relatively smaller 
+            land mass but at worrying levels of API, such as Pakistan at an AQI Value of 252.
+        </p>
+        <div class="spacepad"></div>
+        <h2 class ="normaltitle">Relationship between Carbon Monoxide(CO),Nitrogen Dioxide(NO2) and AQI Value</h2>
+        <div class="idioms">
+            <div id ="scatter" ></div>
+        </div>
+        <p class="intro">
+            Here we have the neighbouring countries that are taken as the samples to determine the presence of a relationship between CO, NO2 and AQI Values. Not much conclusive 
+            evidence can be seen here as the correlation between NO2 and CO is unable to be determined based on the data shown. However, it can be seen by Indonesia where the city with
+            high values of NO2 or CO happens to have higher AQI Values as well.
+        </p>
+        <div class="spacepad"></div>
+        <h2 class ="normaltitle">Cities in The World With Highest Carbon Monoxide(CO) AQI Value</h2>
+        <div class="idioms">
+            <div id ="lollipop" ></div>
+        </div>
+        <p class="intro">
+            A majority of the countries where the cities are shown so happend to fall under the Asian countries. Can it be possible that CO values are just higher in Asian countries,
+            or are the regulations towards better air quality not effective enough in the countries of Asia ? This is a trend that certainly needs to be investigated for an overall
+            better air quality which can also be applied for other countries in other regions.
+        </p>
+        <div class="spacepad"></div>
+        <h2 class ="normaltitle">Relationship between Nitrogen Dioxide(NO2) and Ozone AQI Value</h2>
+        <div class="idioms">
+            <div id ="heatmap" ></div>
+        </div>
+        <p class="intro">
+            It has been researched that NO2 is one of the leading reasons of ozone pollution, which means at first glance you would expect the cities with higher NO2 values to have
+            a higher Ozone AQI Value. However, from the visualization shown above, it can be seen that this is not necessarily the case. A direct correlation between these two gases 
+            is not shown even though it is already a fact that NO2 causes ozone pollution. Could it be possible that there are more extreme factors that causes the higher Ozone AQI values
+            aside from NO2?
+        </p>
     </div>
     
     <script type="text/javascript">

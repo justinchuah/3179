@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_of_Countries.csv"},
-  "title":"Relationship between NO2 AQI vs Ozone AQI",
   "transform": [{
     "filter": {"and": [
       {"field": "NO2 AQI Value", "range":[0,50]},
@@ -11,8 +10,9 @@
   }
   ],
   "mark": "rect",
-  "width": 700,
-  "height": 800,
+  "width": 800,
+  "height": 550,
+  "background":"beige",
   "encoding": {
     "x": {
       "bin": {"maxbins":50},
