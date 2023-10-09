@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_and_Lat_Long_of_Countries.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_of_Countries.csv"},
   "title":"Relationship between NO2 AQI vs Ozone AQI",
   "transform": [{
     "filter": {"and": [
