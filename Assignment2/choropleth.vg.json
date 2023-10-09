@@ -3,6 +3,7 @@
   "width": 800,
   "height": 450,
   "title": "World Air Quality Index",
+  "background": "beige",
   "projection": {"type": "equalEarth"},
   "layer": [
     {
