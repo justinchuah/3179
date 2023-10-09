@@ -2,6 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 450,
+  "background":"beige",
   "projection": {"type": "equalEarth"},
   "layer": [
     {
@@ -18,25 +19,25 @@
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
     },
-        {
-            "data": {
-                "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/ne_110m.topojson",
-                "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-            },
-            "transform": [
-                {
-                    "calculate": "'Data not collected in ' + datum.properties.NAME",
-                    "as": "tooltip"
-                }
-            ],
-
-            "mark": {
-                "type": "geoshape","fill": "lightgray","stroke": "white","strokeWidth": 1
-            },
-
-            "encoding": {"tooltip": {"field": "tooltip"}}
-        
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/ne_110m.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
+      "transform": [
+        {
+          "calculate": "'Data not collected in ' + datum.properties.NAME",
+          "as": "tooltip"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {"tooltip": {"field": "tooltip"}}
+    },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/ne_110m.topojson",
@@ -45,12 +46,12 @@
       "transform": [
         {
           "lookup": "properties.NAME",
-          "from":{
-            "data":{
-              "url":"https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_and_Lat_Long_of_Countries.csv"
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_and_Lat_Long_of_Countries.csv"
             },
             "key": "Country",
-            "fields":["AQI Value"]
+            "fields": ["AQI Value"]
           }
         }
       ],
@@ -66,14 +67,11 @@
             "domain": [10, 40, 50, 200, 500]
           }
         },
-        "tooltip":[
-          {"field":"properties.NAME", "type": "nominal", "title": "Country"
-          },
-          {"field":"AQI Value", "type": "quantitative", "title": "AQI Value"}
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {"field": "AQI Value", "type": "quantitative", "title": "AQI Value"}
         ]
       }
     }
-    
-  ],
-  "config": {"background": "transparent"}
+  ]
 }
