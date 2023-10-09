@@ -14,11 +14,11 @@
 </head>
 
 <body>
-
+    <div id = "choropleth"></div>
     <script type="text/javascript">
 
         var vis_1 = "js/choropleth.vg.json";
-        vegaEmbed('#symbol_map', vis_1).then(function (result) {
+        vegaEmbed('#chropleth', vis_1).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
