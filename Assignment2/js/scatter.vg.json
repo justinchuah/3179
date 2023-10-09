@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_of_Countries.csv"},
+  "title":"Relationship between CO AQI vs NO2 AQI",
+  "transform": [{
+    "filter": {"and": [
+      {"field": "CO AQI Value", "valid":true},
+      {"field": "PM2.5 AQI Value", "valid": true},
+      {"field": "Country", "valid": false},
+      {"field": "Country", "oneOf":["Malaysia", "Indonesia", "Singapore", "Thailand", "Philippines"]}
+    ]
+    }
+  }
+  ],
+  "mark": "point",
+  "width": 700,
+  "height": 800,
+  "encoding": {
+    "x": {
+      "field": "CO AQI Value",
+      "type": "quantitative",
+      "title":"CO AQI Value"
+    },
+    "y": {
+      "field": "NO2 AQI Value",
+      "type": "quantitative",
+      "title": "NO2 AQI Value"
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal"
+    },
+    "size":{
+      "field": "AQI Value",
+      "aggregate":"max",
+      "scale":{"domain":[0,500], "range":[20,1000]},
+      "title": "AQI Value"
+    },
+    "tooltip":[
+      {"field": "Country"},
+      {"field": "City"},
+      {"field": "NO2 AQI Value", "type": "quantitative"},
+      {"field": "CO AQI Value", "type": "quantitative"},
+      {"field": "AQI Value", "title":  "AQI Value", "type": "quantitative"}
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
