@@ -32,12 +32,15 @@
       "scale":{
         "type": "threshold",
         "domain":[1,2,5,10,20,50]
+      },
+      "legend":{"values":[0,1,2,5,10,20,50]
       }
     },
     "tooltip":[
       {"field": "Ozone AQI Value", "type": "quantitative"},
       {"field": "NO2 AQI Value", "type": "quantitative"},
-      {"aggregate":"count", "title":"Number of Instances"}
+      {"aggregate":"count", "title":"Number of Instances"},
+      ""
     ]
   },
   "config": {
