@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_and_Lat_Long_of_Countries.csv"},
-  "title":"Relationship between CO AQI vs Ozone AQI",
+  "title":"Relationship between NO2 AQI vs Ozone AQI",
   "transform": [{
     "filter": {"and": [
-      {"field": "CO AQI Value", "range":[0,45]},
+      {"field": "NO2 AQI Value", "range":[0,50]},
       {"field": "Ozone AQI Value", "valid": true}
     ]
     }
@@ -22,21 +22,21 @@
     },
     "y": {
       "bin": {"maxbins": 50},
-      "field": "CO AQI Value",
+      "field": "NO2 AQI Value",
       "type": "quantitative",
-      "title": "CO AQI Value"
+      "title": "NO2 AQI Value"
     },
     "color": {
       "aggregate": "count",
       "type": "quantitative",
       "scale":{
-        "type": "linear",
-        "domain":[1,3,5,10,100,300,500]
+        "type": "threshold",
+        "domain":[1,3,5,10,50,150]
       }
     },
     "tooltip":[
       {"field": "Ozone AQI Value", "type": "quantitative"},
-      {"field": "CO AQI Value", "type": "quantitative"},
+      {"field": "NO2 AQI Value", "type": "quantitative"},
       {"aggregate":"count", "title":"Number of Instances"}
     ]
   },
