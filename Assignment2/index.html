@@ -9,7 +9,7 @@
 
 
     <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
 
 </head>
 
@@ -30,22 +30,22 @@
     
     <script type="text/javascript">
 
-        var vis1 = "js/choropleth.vg.json";
+        var vis1 = "choropleth.vg.json";
         vegaEmbed('#choropleth', vis1).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        var vis2 = "js/scatter.vg.json";
+        var vis2 = "scatter.vg.json";
         vegaEmbed('#scatter', vis2).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        var vis3 = "js/lollipop.vg.json";
+        var vis3 = "lollipop.vg.json";
         vegaEmbed('#lollipop', vis3).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        var vis4 = "js/2d_heatmap_histogram.vg.json";
+        var vis4 = "2d_heatmap_histogram.vg.json";
         vegaEmbed('#heatmap', vis4).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);

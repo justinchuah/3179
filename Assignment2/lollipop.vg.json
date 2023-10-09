@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Cities in the World with the Highest CO AQI Value",
   "data": {
-    "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_of_Countries.csv"
+    "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_of_Countries.csv"
   },
   "params": [{
         "name": "numCities",
