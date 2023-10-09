@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Cities in the World with the Highest NO2 AQI Value",
+  "title": "Cities in the World with the Highest CO AQI Value",
   "data": {
-    "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_and_Lat_Long_of_Countries.csv"
+    "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_of_Countries.csv"
   },
   "params": [{
         "name": "numCities",
@@ -19,11 +19,11 @@
   "transform": [
     {
       "window": [{
-        "field": "NO2 AQI Value",
+        "field": "CO AQI Value",
         "op":"rank",
         "as":"rank"
       }],
-      "sort": [{"field":"NO2 AQI Value","order":"descending"}]
+      "sort": [{"field":"CO AQI Value","order":"descending"}],
     },
     {
       "filter":"datum.rank <=numCities"
@@ -39,21 +39,21 @@
         "sort":"-x"
       },
       "x":{
-        "field":"NO2 AQI Value",
+        "field":"CO AQI Value",
         "aggregate":"max",
-        "title": "NO2 AQI Value"
+        "title": "CO AQI Value"
       },
       "color":{
         "field":"Country"
       },
-      "tooltip":[{"field":"City"}, {"field":"NO2 AQI Value"}]
+      "tooltip":[{"field":"City"}, {"field":"CO AQI Value"}]
         
     }
   },
   {"mark":{"type": "text", "dx":17, "dy":0, "color":"black", "size":13},
   "encoding": {
     "x":{
-      "field":"NO2 AQI Value",
+      "field":"CO AQI Value",
       "aggregate":"max",
       "type": "quantitative",
       "bandPosition": 0.5
@@ -64,7 +64,7 @@
       "sort":"-x"
 
     },
-    "text":{"aggregate": "max", "field":"NO2 AQI Value"}
+    "text":{"aggregate": "max", "field":"CO AQI Value"}
   }}
   ,
   {
@@ -75,14 +75,12 @@
       },
       "x":{
         "aggregate":"max",
-        "field":"NO2 AQI Value"
+        "field":"CO AQI Value"
       },
       "color":{
         "field":"Country"
       },
-      "tooltip":[{"field":"City"}, {"field":"NO2 AQI Value"}]
+      "tooltip":[{"field":"City"}, {"field":"CO AQI Value"}]
     }
   }]
 }
-
-
