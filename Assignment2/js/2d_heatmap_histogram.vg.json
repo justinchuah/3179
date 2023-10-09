@@ -1,46 +1,62 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/data/AQI_of_Countries.csv"},
-  "title":"Relationship between NO2 AQI vs Ozone AQI",
+  "title":"Relationship between CO AQI vs NO2 AQI",
   "transform": [{
     "filter": {"and": [
-      {"field": "NO2 AQI Value", "range":[0,50]},
-      {"field": "Ozone AQI Value", "valid": true}
+      {"field": "CO AQI Value", "range":[0,60]},
+      {"field": "NO2 AQI Value", "range":[0,60]},
+      {"field": "Country", "valid": false},
+      {"field": "Country", "oneOf":["Malaysia", "Indonesia", "Singapore", "Thailand", "Philippines"]}
     ]
     }
   }
   ],
-  "mark": "rect",
+  "params": [
+    {
+      "name": "country_highlight",
+      "select": {"type":"point", "fields": ["Country"]},
+      "bind":"legend"
+    }
+  ]
+  ,
+  "mark": "point",
   "width": 700,
   "height": 800,
   "encoding": {
     "x": {
-      "bin": {"maxbins":50},
-      "field": "Ozone AQI Value",
+      "field": "CO AQI Value",
       "type": "quantitative",
-      "title":"Ozone AQI Value"
+      "title":"CO AQI Value"
     },
     "y": {
-      "bin": {"maxbins": 50},
       "field": "NO2 AQI Value",
       "type": "quantitative",
       "title": "NO2 AQI Value"
     },
     "color": {
-      "aggregate": "count",
-      "type": "quantitative",
-      "scale":{
-        "type": "threshold",
-        "domain":[1,2,5,10,20,50]
-      },
-      "legend":{"values":[0,1,2,5,10,20,50]
-      }
+      "field": "Country",
+      "type": "nominal"
     },
+    "shape":{"field": "Country",
+      "type": "nominal"},
+    "size":{
+      "field": "AQI Value",
+      "aggregate":"max",
+      "scale":{"domain":[0,500], "range":[20,1000]},
+      "title": "AQI Value"
+    },
+    "opacity":{
+      "condition":{"param": "country_highlight", "value":1},
+      "value":0.05
+    }
+    ,
     "tooltip":[
-      {"field": "Ozone AQI Value", "type": "quantitative"},
+      {"field": "Country"},
+      {"field": "City"},
       {"field": "NO2 AQI Value", "type": "quantitative"},
-      {"aggregate":"count", "title":"Number of Instances"},
-      ""
+      {"field": "CO AQI Value", "type": "quantitative"},
+      {"field": "AQI Value", "title":  "AQI Value", "type": "quantitative"}
     ]
   },
   "config": {
