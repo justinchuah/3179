@@ -1,5 +1,5 @@
 .visarea {
-    width: 75%;
+    width: 1400px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(222, 184, 135);
@@ -15,7 +15,7 @@
 }
 .normaltitle{
 
-    font-size: 200%;
+    font-size: 220%;
     text-align: center;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -24,7 +24,7 @@
     font-size: 145%;
     text-align: center;
     font-weight: normal;
-    color: rgb(61, 49, 49);
+    color: rgba(61, 49, 49, 0.897);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 70%;
     margin-left: auto;
