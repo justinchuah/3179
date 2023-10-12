@@ -3,7 +3,6 @@
   "width": 800,
   "height": 450,
   "background":"beige",
-  "title": "Cities in the World with the Highest CO AQI Value",
   "data": {
     "url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_of_Countries.csv"
   },
@@ -44,12 +43,13 @@
       "x":{
         "field":"CO AQI Value",
         "aggregate":"max",
-        "title": "CO AQI Value"
+        "title": "CO AQI Value",
+        "axis": {"domain": true, "grid": false}
       },
       "color":{
         "field":"Country"
       },
-      "tooltip":[{"field":"City"}, {"field":"CO AQI Value"}]
+      "tooltip":[{"field":"City"},{"field":"Country"}, {"field":"CO AQI Value"}]
         
     }
   },
@@ -81,9 +81,12 @@
         "field":"CO AQI Value"
       },
       "color":{
-        "field":"Country"
+        "field":"Country",
+        "legend":{"orient": "bottom"},
+        "scale":{"scheme":"greenblue"}
       },
-      "tooltip":[{"field":"City"}, {"field":"CO AQI Value"}]
+      "tooltip":[{"field":"City"}, {"field":"Country"},{"field":"CO AQI Value"}]
     }
-  }]
+  }],
+  "config": {"view":{"stroke": "transparent"}}
 }
