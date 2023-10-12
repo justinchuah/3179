@@ -81,8 +81,8 @@
          "tooltip": {"value": "25% of the Air Pollution here is caused by vehicles alone "}},
          "mark":{
           "type": "text",
-          "dy": -75,
-          "dx": 140,
+          "dy": -88,
+          "dx": 145,
           "fontSize": 12
           
          }
@@ -91,7 +91,7 @@
          "tooltip": {"value": "China consumes as much coal annually as all other countries in the world COMBINED!"}},
          "mark":{
           "type": "text",
-          "dy": -100,
+          "dy": -110,
           "dx": 200,
           "fontSize": 12
           
@@ -101,7 +101,7 @@
          "mark":{
           "type": "text",
           "dy": 70,
-          "dx": 280,
+          "dx": 300,
           "fontSize": 12
           
          }}

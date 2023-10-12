@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_of_Countries.csv"},
-  "width": 831,
+  "width": 835,
   "height": 700,
   "background":"beige",
   "transform": [{
@@ -72,7 +72,7 @@
   },
   {
     "encoding": {"text":{"value": "M i r i"}},
-    "mark":{"type": "text", "fontSize":12, "dy": 330, "dx":330 }
+    "mark":{"type": "text", "fontSize":14, "dy": 330, "dx":330 }
   },
   {
     "encoding": {"text":{"value": "The high CO AQI is mainly due to forest and peat soil fires"}},
