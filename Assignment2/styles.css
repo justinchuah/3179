@@ -3,6 +3,8 @@
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(222, 184, 135);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .bigtitle{
@@ -43,4 +45,5 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
