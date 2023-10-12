@@ -77,8 +77,7 @@
           ]
         }
         },
-        {"encoding": {"text":{"value": "Pakistan"}, 
-         "tooltip": {"value": "25% of the Air Pollution here is caused by vehicles alone "}},
+        {"encoding": {"text":{"value": "Pakistan"}},
          "mark":{
           "type": "text",
           "dy": -88,
@@ -87,8 +86,15 @@
           
          }
         },
-        {"encoding": {"text":{"value": "China"}, 
-         "tooltip": {"value": "China consumes as much coal annually as all other countries in the world COMBINED!"}},
+        {"encoding": {"text":{"value": ["25% of the Air Pollution", "in Pakistan", "is caused by vehicles alone"]}},
+         "mark":{
+          "type": "text",
+          "dy": 0,
+          "dx": 170,
+          "fontSize": 12
+         }
+        },
+        {"encoding": {"text":{"value": "China"}},
          "mark":{
           "type": "text",
           "dy": -110,
@@ -96,8 +102,23 @@
           "fontSize": 12
           
          }},
-         {"encoding": {"text":{"value": "Australia"}, 
-         "tooltip": {"value": "Australia has one of the best air quality in the world given its land mass"}},
+         {"encoding": {"text":{"value": ["China consumes as much coal", "annually as all other countries" ,"in the world COMBINED!"]}},
+         "mark":{
+          "type": "text",
+          "dy": -90,
+          "dx": 350,
+          "fontSize": 12
+          
+         }},
+         {"encoding": {"text":{"value": ["Australia has one of the", "best air quality in the world", "given its land mass"]}},
+         "mark":{
+          "type": "text",
+          "dy": 110,
+          "dx": 220,
+          "fontSize": 12
+          
+         }},
+         {"encoding": {"text":{"value": "Australia"}},
          "mark":{
           "type": "text",
           "dy": 70,
