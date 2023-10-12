@@ -80,6 +80,9 @@
       "color":{"condition":{"test": "datum.City === 'Durango'", "value":"green"}, "value":"lightgreen"},
       "tooltip":[{"field":"City"}, {"field":"Country"},{"field":"CO AQI Value"}]
     }
-  }],
+  },
+  {"mark":{
+    "type": "text", "dx":140, "dy": 160, "fontSize":12, "font":"Arial"
+  },"encoding": {"text":{"value":["A majority of the cities shown has origins from Asia","is this an issue that is uniquely faced by Asian countries?"]}}}],
   "config": {"view":{"stroke": "transparent"}}
 }
