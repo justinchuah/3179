@@ -1,50 +1,60 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/justinchuah/3179/main/Assignment2/AQI_of_Countries.csv"},
+  "width": 800,
+  "height": 700,
+  "background":"beige",
   "transform": [{
     "filter": {"and": [
-      {"field": "CO AQI Value", "range":[0,60]},
-      {"field": "NO2 AQI Value", "range":[0,60]},
+
       {"field": "Country", "valid": false},
-      {"field": "Country", "oneOf":["Malaysia", "Indonesia", "Singapore", "Thailand", "Philippines"]}
+      {"field": "Country", "oneOf":["Malaysia", "Indonesia", "Thailand", "Philippines"]}
     ]
     }
   }
-  ],
-  "params": [
+  ]
+  
+  ,
+  "layer":[
+    
+    {"params": [
     {
       "name": "country_highlight",
       "select": {"type":"point", "fields": ["Country"]},
       "bind":"legend"
     }
-  ]
-  ,
-  "mark": "point",
-  "width": 800,
-  "height": 700,
-  "background":"beige",
+  ],
+      "mark": {"type": "point"},
+  
   "encoding": {
     "x": {
       "field": "CO AQI Value",
       "type": "quantitative",
-      "title":"CO AQI Value"
+      "title":"CO AQI Value",
+      "axis": {"domain": true, "grid": false}
     },
     "y": {
       "field": "NO2 AQI Value",
       "type": "quantitative",
-      "title": "NO2 AQI Value"
+      "title": "NO2 AQI Value",
+      "axis": {"domain": true, "grid": false}
     },
     "color": {
       "field": "Country",
-      "type": "nominal"
+      "type": "nominal",
+      "scale": {
+        "domain": ["Malaysia", "Indonesia", "Thailand", "Philippines"],
+        "range": ["#0071A1", "#FF7F00", "#009246", "#FFD100"]
+        },
+      "legend" :{"orient": "top", "direction": "horizontal"}
     },
-    "shape":{"field": "Country",
-      "type": "nominal"},
+
     "size":{
       "field": "AQI Value",
       "aggregate":"max",
-      "scale":{"domain":[0,500], "range":[20,1000]},
-      "title": "AQI Value"
+      "scale":{"domain":[1,5,10,25,50,100,200,500], "range":[1,10,20,30,50,100,500]},
+      "title": "AQI Value",
+      "legend" :{"orient": "top", "direction": "horizontal"}
     },
     "opacity":{
       "condition":{"param": "country_highlight", "value":1},
@@ -58,7 +68,26 @@
       {"field": "CO AQI Value", "type": "quantitative"},
       {"field": "AQI Value", "title":  "AQI Value", "type": "quantitative"}
     ]
+  }
   },
+  {
+    "encoding": {"text":{"value": "M i r i"}},
+    "mark":{"type": "text", "fontSize":12, "dy": 330, "dx":330 }
+  },
+  {
+    "encoding": {"text":{"value": "The high CO AQI is mainly due to forest and peat soil fires"}},
+    "mark":{"type": "text", "fontSize":12, "dy": 300, "dx":250 }
+  },
+  {
+    "encoding": {"text":{"value": "The large AQI values here means that CO AQI and NO2 AQI"}},
+    "mark":{"type": "text", "fontSize":12, "dy": 300, "dx":-150 }
+  },
+  {
+    "encoding": {"text":{"value": "the drastic difference of AQI Values also depend on other factors "}},
+    "mark":{"type": "text", "fontSize":12, "dy": 330, "dx":-150 }
+  }
+  ]
+  ,
   "config": {
     "view": {
       "stroke": "transparent"
