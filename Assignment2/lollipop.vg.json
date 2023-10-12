@@ -46,9 +46,7 @@
         "title": "CO AQI Value",
         "axis": {"domain": true, "grid": false}
       },
-      "color":{
-        "field":"Country"
-      },
+      "color":{"condition":{"test": "datum.City === 'Durango'", "value":"green"}, "value":"lightgreen"},
       "tooltip":[{"field":"City"},{"field":"Country"}, {"field":"CO AQI Value"}]
         
     }
@@ -65,7 +63,6 @@
       "field":"City",
       "type": "ordinal",
       "sort":"-x"
-
     },
     "text":{"aggregate": "max", "field":"CO AQI Value"}
   }}
@@ -80,11 +77,7 @@
         "aggregate":"max",
         "field":"CO AQI Value"
       },
-      "color":{
-        "field":"Country",
-        "legend":{"orient": "bottom"},
-        "scale":{"scheme":"greenblue"}
-      },
+      "color":{"condition":{"test": "datum.City === 'Durango'", "value":"green"}, "value":"lightgreen"},
       "tooltip":[{"field":"City"}, {"field":"Country"},{"field":"CO AQI Value"}]
     }
   }],
