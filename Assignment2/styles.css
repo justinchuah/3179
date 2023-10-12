@@ -41,6 +41,7 @@
 
 .idioms{
     width: 880px;
+    object-fit: fill;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
