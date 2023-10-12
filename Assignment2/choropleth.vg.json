@@ -73,5 +73,6 @@
         ]
       }
     }
-  ]
+  ],
+  "config": {"view":{"stroke":"transparent"}}
 }
