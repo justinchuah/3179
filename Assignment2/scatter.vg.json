@@ -44,7 +44,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Malaysia", "Indonesia", "Thailand", "Philippines"],
-        "range": ["#0071A1", "#FF7F00", "#009246", "#FFD100"]
+        "range": ["#0071A1", "#b96006", "#009246", "#FFD100"]
         },
       "legend" :{"orient": "top", "direction": "horizontal"}
     },
